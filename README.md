@@ -1,16 +1,29 @@
-# React + Vite
+# 🖥️ Sentinel Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A live monitoring dashboard for the Sentinel API gateway, built in React. It shows every registered client with its rate-limiting configuration and status, alongside a real-time feed of the last 20 requests passing through the gateway — auto-refreshing every few seconds.
 
-Currently, two official plugins are available:
+This dashboard talks directly to the [Sentinel backend](https://github.com/Manshiii28/sentinel)'s admin API, so anything visible here reflects live gateway activity.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Client overview** — name, rate-limiting algorithm (Token Bucket / Sliding Window), configured limit, and active/blocked status for every registered client
+- **One-click block/unblock** — instantly toggle a client's access without touching the backend directly
+- **Live request feed** — the last 20 requests through the gateway, with client, endpoint, outcome (allowed/denied/flagged), and timestamp
+- **Auto-refresh** — the dashboard polls the backend every few seconds so the view stays current without manual reloads
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the Oxlint configuration
+- React + Vite
+- Axios for API calls
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Running locally
+
+```bash
+npm install
+npm run dev
+
+
+
+Part of the Sentinel project
+🛡️ sentinel — main API gateway backend
+🐍 sentinel-ml — Python Isolation Forest anomaly detection service
