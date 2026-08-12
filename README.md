@@ -1,6 +1,6 @@
 # 🖥️ Sentinel Dashboard
 
-Live Demo: [Sentinel Dashboard](https://sentinel-dashboard-1hcu8wmhh-manshiii28s-projects.vercel.app)
+Live Demo: [Sentinel Dashboard](https://sentinel-dashboard-black.vercel.app/)
 
 
 A live monitoring dashboard for the Sentinel API gateway, built in React. It shows every registered client with its rate-limiting configuration and status, alongside a real-time feed of the last 20 requests passing through the gateway — auto-refreshing every few seconds.
